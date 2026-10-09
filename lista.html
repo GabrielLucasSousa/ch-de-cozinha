@@ -266,6 +266,40 @@
 </div>
 </div>
 </div>
+<!-- Aviso exibido ao entrar na lista -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="aviso-modal" onclick="if (event.target === this) closeAvisoModal()">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-3xl p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200 border border-outline-variant/30">
+<div class="w-12 h-12 rounded-full bg-laranja/15 flex items-center justify-center text-tertiary mb-space-sm mx-auto">
+<span class="material-symbols-outlined text-[24px]">info</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif text-center mb-1">
+  Escolha com atenção
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mb-space-md">
+  Quando você escolhe um presente, ele fica indisponível para todos.
+</p>
+<button class="w-full py-3 rounded-full bg-laranja text-on-laranja font-label-lg text-label-lg italic shadow-sm hover:bg-laranja-escuro transition-all" onclick="closeAvisoModal()">
+  Entendi
+</button>
+</div>
+</div>
+<!-- Explicação do botão de informação de cada item -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="link-info-modal" onclick="if (event.target === this) closeLinkInfoModal()">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-3xl p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200 border border-outline-variant/30">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-space-sm mx-auto">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif text-center mb-1">
+  Não precisa comprar exatamente nesse link
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mb-space-md">
+  Os links são só uma referência de modelo. Você pode comprar onde quiser (loja física ou outro site), seguindo mais ou menos o estilo e o modelo do produto.
+</p>
+<button class="w-full py-3 rounded-full bg-laranja text-on-laranja font-label-lg text-label-lg italic shadow-sm hover:bg-laranja-escuro transition-all" onclick="closeLinkInfoModal()">
+  Entendi
+</button>
+</div>
+</div>
 <!-- Modal 2: Admin Password / Access Modal -->
 <div class="fixed inset-0 z-50 hidden flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="admin-auth-modal">
 <div class="w-full max-w-sm bg-surface-container-lowest rounded-3xl p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200 border border-outline-variant/30">
@@ -552,6 +586,9 @@
                   <h4 class="font-body-sm text-[13px] font-semibold text-on-surface line-clamp-2 leading-snug">
                     ${item.title}
                   </h4>
+                  <button onclick="openLinkInfoModal()" title="Sobre o link" class="-mt-1 -mr-1 w-7 h-7 shrink-0 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">info</span>
+                  </button>
                 </div>
                 <div class="flex items-baseline gap-1.5 mb-1.5">
                   <span class="font-label-md text-[11px] text-on-surface-variant">Sugerido:</span>
@@ -709,6 +746,24 @@
     closeGiftModal();
     renderCatalog();
     showAdminToast('Presente reservado com carinho! ❤️');
+  }
+
+  function closeAvisoModal() {
+    const modal = document.getElementById('aviso-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function openLinkInfoModal() {
+    const modal = document.getElementById('link-info-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeLinkInfoModal() {
+    const modal = document.getElementById('link-info-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
   }
 
   // Admin Security & Dashboard Handlers
