@@ -11,6 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   :root { color-scheme: only light; }
+  /* Navegadores Android (ex.: Samsung Internet) só deixam de escurecer o site sozinhos
+     quando ele declara um tema escuro próprio; este "tema escuro" é o mesmo claro. */
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: only light; }
+    html, body { background: #e9e4e0; color: #3a323f; }
+  }
   /*
    * Layout reproduzido do "CHÁ22 (1).pdf" (arte de 1080 x 4737 px).
    * Todas as medidas usam a unidade --u = 1px da arte original, escalada

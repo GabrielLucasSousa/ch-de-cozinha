@@ -111,6 +111,12 @@
       font-size-adjust: 0.5;
     }
     .material-symbols-outlined { font-size-adjust: none; }
+    /* Navegadores Android (ex.: Samsung Internet) só deixam de escurecer o site sozinhos
+       quando ele declara um tema escuro próprio; este "tema escuro" é o mesmo claro. */
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: only light; }
+      html, body { background: #e9e4e0; color: #3a323f; }
+    }
     /* iOS dá zoom ao focar campos com fonte < 16px, e aí a barra fixa de baixo "solta" no meio da tela */
     input, select, textarea { font-size: 16px !important; }
     .font-serif, .font-sans { font-family: "Crimson Pro", Georgia, serif !important; }
