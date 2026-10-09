@@ -10,6 +10,8 @@ Static site for Ágatha & Matheus's "Chá dos Noivos" (bridal shower). All UI te
 - `lista.html`: the gift list app. The invitation's "Acesse nossa lista aqui" button links to it.
 - `assets/`: images cropped from the PDF's embedded 1080×4737 JPEG.
 
+Deploy: GitHub Pages serves the `main` branch root of `GabrielLucasSousa/ch-de-cozinha` at https://gabriellucassousa.github.io/ch-de-cozinha/, so pushing to `main` publishes. The repo is public, so `*.pdf` and `*.xlsx` (the design and spreadsheet sources) are gitignored and stay local.
+
 To run it, open `index.html` in a browser (or serve the folder with any static server, e.g. `python -m http.server`). It needs network access for Google Fonts and Tailwind.
 
 ## Invitation (`index.html`)
