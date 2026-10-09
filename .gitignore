@@ -1,0 +1,4 @@
+# Arquivos de origem que ficam só no computador (o repositório é público)
+*.pdf
+*.xlsx
+.claude/

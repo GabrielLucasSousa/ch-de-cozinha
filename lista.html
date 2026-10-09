@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#e9e4e0",
+        "surface": "#e9e4e0",
+        "surface-bright": "#f4f1ee",
+        "surface-dim": "#dcd5cf",
+        "surface-tint": "#3b5c9f",
+        "surface-variant": "#e1dbd5",
+        "surface-container-lowest": "#f8f6f4",
+        "surface-container-low": "#f1edea",
+        "surface-container": "#e4dfda",
+        "surface-container-high": "#dcd6d0",
+        "surface-container-highest": "#d4cdc6",
+        "on-background": "#3a323f",
+        "on-surface": "#3a323f",
+        "on-surface-variant": "#5d5560",
+        "outline": "#8b838c",
+        "outline-variant": "#cdc5bf",
+        "inverse-surface": "#2d2833",
+        "inverse-on-surface": "#f1edea",
+        "inverse-primary": "#b3c6ef",
+        "primary": "#3b5c9f",
+        "on-primary": "#ffffff",
+        "primary-container": "#2f4c86",
+        "on-primary-container": "#ffffff",
+        "primary-fixed": "#d9e2f5",
+        "primary-fixed-dim": "#b3c6ef",
+        "on-primary-fixed": "#0d1d3d",
+        "on-primary-fixed-variant": "#2f4c86",
+        "laranja": "#fe7501",
+        "laranja-escuro": "#e56500",
+        "on-laranja": "#ffffff",
+        "tertiary": "#c85400",
+        "on-tertiary": "#ffffff",
+        "tertiary-container": "#fe7501",
+        "on-tertiary-container": "#ffffff",
+        "tertiary-fixed": "#ffdcc4",
+        "tertiary-fixed-dim": "#ffb784",
+        "on-tertiary-fixed": "#321200",
+        "on-tertiary-fixed-variant": "#7a3300",
+        "secondary": "#5d5560",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#e1dbd5",
+        "on-secondary-container": "#3a323f",
+        "secondary-fixed": "#e1dbd5",
+        "secondary-fixed-dim": "#cdc5bf",
+        "on-secondary-fixed": "#1f1a24",
+        "on-secondary-fixed-variant": "#4a4350",
+        "error": "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "margin": "2.5rem",
+        "space-xs": "0.25rem",
+        "gutter": "1.25rem",
+        "space-sm": "0.5rem",
+        "gutter-mobile": "0.75rem",
+        "margin-mobile": "1.25rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-xl": "2.5rem"
+      },
+      fontFamily: {
+        "headline-lg": ["Crimson Pro", "Georgia", "serif"],
+        "title-editorial": ["Crimson Pro", "Georgia", "serif"],
+        "display-hero": ["Crimson Pro", "Georgia", "serif"],
+        "label-lg": ["Crimson Pro", "Georgia", "serif"],
+        "headline-sm": ["Crimson Pro", "Georgia", "serif"],
+        "label-md": ["Crimson Pro", "Georgia", "serif"],
+        "display-hero-mobile": ["Crimson Pro", "Georgia", "serif"],
+        "headline-md": ["Crimson Pro", "Georgia", "serif"],
+        "body-sm": ["Crimson Pro", "Georgia", "serif"],
+        "headline-lg-mobile": ["Crimson Pro", "Georgia", "serif"],
+        "badge-script": ["Crimson Pro", "Georgia", "serif"],
+        "body-lg": ["Crimson Pro", "Georgia", "serif"],
+        "body-md": ["Crimson Pro", "Georgia", "serif"]
+      },
+      fontSize: {
+        "headline-lg": ["36px", { lineHeight: "44px", fontWeight: "600" }],
+        "title-editorial": ["22px", { lineHeight: "30px", fontWeight: "400" }],
+        "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "600" }],
+        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "500" }],
+        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }],
+        "display-hero-mobile": ["38px", { lineHeight: "46px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "headline-md": ["26px", { lineHeight: "34px", fontWeight: "500" }],
+        "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+        "badge-script": ["14px", { lineHeight: "18px", fontWeight: "400" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      /* Crimson Pro tem olho pequeno; isso mantém os tamanhos legíveis */
+      font-size-adjust: 0.5;
+    }
+    .material-symbols-outlined { font-size-adjust: none; }
+    .font-serif, .font-sans { font-family: "Crimson Pro", Georgia, serif !important; }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/95 backdrop-blur-md border-b border-outline-variant/60"><div class="h-16 max-w-[540px] mx-auto px-gutter-mobile flex items-center justify-between"><a class="w-8 h-8 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center shrink-0 text-on-surface-variant hover:text-primary transition-colors" href="index.html" title="Voltar ao convite"><span class="material-symbols-outlined text-[18px]">arrow_back</span></a><div class="flex flex-col items-center text-center leading-tight"><span class="font-label-md text-[11px] uppercase tracking-[0.22em] text-tertiary font-semibold">Chá dos Noivos</span><span class="font-headline-sm text-[20px] text-on-surface italic">Ágatha &amp; Matheus</span></div><button class="w-8 h-8 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center shrink-0 text-on-surface-variant hover:text-primary transition-colors" onclick="openAdminModal()" title="Área dos Noivos"><span class="material-symbols-outlined text-[17px]">lock</span></button></div></header><main class="flex flex-col relative w-full max-w-[540px] mx-auto pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Capa: faixa de azulejo + cartão azul, como no convite -->
+<section class="relative pb-space-lg">
+<img alt="" class="block w-full" src="assets/azulejo-faixa.jpg"/>
+<div class="px-margin-mobile relative" style="margin-top:-9%">
+<div class="rounded-[28px] bg-primary text-on-primary px-space-md pt-space-md pb-space-lg text-center shadow-[0_8px_24px_rgba(40,40,60,0.22)]">
+<img alt="Lista de Presentes" class="block w-full max-w-[340px] mx-auto" src="assets/titulo-presentes.png"/>
+<p class="font-body-md text-[17px] leading-snug mt-space-sm mb-space-md">
+  Montamos uma lista de presentes com tudo o que precisamos para a nossa casinha nova. Escolha um mimo e marque com o seu nome!
+</p>
+<!-- Contadores -->
+<div class="grid grid-cols-3 divide-x divide-white/25 rounded-2xl bg-white/10 border border-white/20 py-2.5 px-1">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-[22px] font-semibold" id="counter-total">80</span>
+<span class="font-label-md text-[11px] uppercase tracking-wider text-white/80">Na Lista</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-[22px] font-semibold" id="counter-available">80</span>
+<span class="font-label-md text-[11px] uppercase tracking-wider text-white/80">Disponíveis</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-[22px] font-semibold text-[#ffb784]" id="counter-reserved">0</span>
+<span class="font-label-md text-[11px] uppercase tracking-wider text-white/80">Escolhidos</span>
+</div>
+</div>
+</div>
+<!-- Selo com data, como a pílula laranja do convite -->
+<div class="flex justify-center -mt-5 relative">
+<span class="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-laranja text-on-laranja shadow-[0_6px_16px_rgba(40,40,60,0.25)] font-label-lg text-[15px] italic">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+  Sáb • 07.11 • 16h00
+</span>
+</div>
+</div>
+</section>
+<!-- Filter & Search Controls (Clean Editorial) -->
+<section class="px-margin-mobile flex flex-col gap-space-xs mb-space-md">
+<!-- Search & Price Row -->
+<div class="flex flex-col gap-2">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-2xl pl-10 pr-4 py-2.5 font-body-sm text-[13px] text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:bg-surface-container-lowest shadow-xs transition-colors" id="catalog-search" placeholder="Buscar presente ou convidado..." type="text"/>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">tune</span>
+<select class="w-full bg-surface-container-low border border-outline-variant/40 rounded-2xl pl-10 pr-9 py-2.5 font-label-md text-[13px] text-on-surface appearance-none focus:outline-none focus:border-primary shadow-xs transition-colors" id="catalog-price-filter">
+<option value="all">Todas as faixas de valor</option>
+<option value="up-to-80">Até R$ 80,00</option>
+<option value="80-to-150">R$ 80,00 a R$ 150,00</option>
+<option value="above-150">Acima de R$ 150,00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Refined Status Segmented Pills -->
+<div class="flex items-center p-1 rounded-2xl bg-surface-container-low border border-outline-variant/30 shadow-xs mt-1">
+<button class="flex-1 py-1.5 rounded-xl text-center font-label-md text-[12px] transition-all bg-primary text-on-primary shadow-xs font-semibold" id="tab-all" onclick="setCatalogFilter('all')">
+    Todos (<span id="tab-count-all">80</span>)
+  </button>
+<button class="flex-1 py-1.5 rounded-xl text-center font-label-md text-[12px] text-on-surface-variant transition-all hover:text-on-surface" id="tab-available" onclick="setCatalogFilter('available')">
+    Disponíveis (<span id="tab-count-available">80</span>)
+  </button>
+<button class="flex-1 py-1.5 rounded-xl text-center font-label-md text-[12px] text-on-surface-variant transition-all hover:text-on-surface" id="tab-reserved" onclick="setCatalogFilter('reserved')">
+    Escolhidos (<span id="tab-count-reserved">0</span>)
+  </button>
+</div>
+</section>
+<!-- Detailed Editorial List Catalog Section (Item Rows) -->
+<section class="px-margin-mobile flex flex-col gap-3 mb-space-xl">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-md text-[11px] uppercase tracking-wider text-outline">Curadoria de Mimos</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant italic font-serif">Toque para reservar</span>
+</div>
+<!-- Live Detailed List Grid / Stack -->
+<div class="flex flex-col gap-3" id="catalog-grid">
+<!-- Populated by JavaScript with Editorial Horizontal Rows -->
+</div>
+<!-- Empty Search State -->
+<div class="hidden flex-col items-center justify-center p-space-lg text-center rounded-3xl bg-surface-container-low border border-outline-variant/30 shadow-xs" id="catalog-empty">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">filter_alt_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif">Nenhum mimo encontrado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tente ajustar os filtros para visualizar outros itens da lista.</p>
+</div>
+</section>
+<!-- Rodapé: citação do convite + faixa de azulejo -->
+<section class="flex flex-col items-center text-center pt-space-md">
+<img alt="“Que pode uma criatura senão, entre criaturas, amar?”" class="block w-[86%] max-w-[440px]" src="assets/citacao.png"/>
+<p class="font-body-md text-[17px] text-on-surface mt-1">Carlos Drummond de Andrade</p>
+<button class="inline-flex items-center gap-1.5 mt-space-lg mb-space-lg px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-[12px] border border-outline-variant/40 transition-all" onclick="openAdminModal()">
+<span class="material-symbols-outlined text-[15px] text-outline">lock</span>
+<span>Acesso dos Noivos (Gestão)</span>
+</button>
+<img alt="" class="block w-full" src="assets/azulejo-faixa.jpg"/>
+</section>
+<!-- Modal 1: Gift Reservation Sheet (Interativo) -->
+<div class="fixed inset-0 z-50 hidden flex-col justify-end items-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="gift-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-3xl p-space-lg shadow-xl relative animate-in fade-in slide-in-from-bottom duration-200 border border-outline-variant/30">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeGiftModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<div class="flex items-center gap-space-xs mb-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">redeem</span>
+<span class="font-label-md text-[11px] uppercase tracking-wider font-semibold">Quero presentear</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif mb-1" id="modal-item-title">
+  Nome do Presente
+</h3>
+<p class="font-body-lg text-body-lg font-bold text-primary mb- space-sm font-sans" id="modal-item-price">
+  R$ 0,00
+</p>
+<!-- Mini Preview Image -->
+<div class="h-40 w-full rounded-2xl overflow-hidden bg-white mb-space-md shadow-xs border border-outline-variant/30">
+<img alt="" class="w-full h-full object-contain" id="modal-item-image" src=""/>
+</div>
+<!-- Form Inputs -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+  Seu nome ou de quem está presenteando *
+</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-2xl px-4 py-3 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:bg-surface-container shadow-xs" id="giver-name-input" placeholder="ex: Maria Clara e Pedro" type="text"/>
+<p class="hidden text-error font-body-sm text-[12px] mt-1" id="giver-error">Por favor, informe seu nome para que os noivos saibam quem presenteou!</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+  Deixe um recadinho carinhoso para Ágatha &amp; Matheus (opcional)
+</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/40 rounded-2xl px-4 py-2.5 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:bg-surface-container shadow-xs resize-none" id="giver-message-input" placeholder="Votos de carinho para o novo lar..." rows="3"></textarea>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center gap-space-xs">
+<button class="flex-1 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-all" onclick="closeGiftModal()">
+  Cancelar
+</button>
+<button class="flex-1 py-3 rounded-full bg-laranja text-on-laranja font-label-lg text-label-lg italic shadow-sm hover:bg-laranja-escuro transition-all flex items-center justify-center gap-1.5" id="confirm-gift-btn" onclick="confirmGiftReservation()">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span>Confirmar Escolha</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modal 2: Admin Password / Access Modal -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="admin-auth-modal">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-3xl p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200 border border-outline-variant/30">
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="closeAdminAuthModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-space-sm mx-auto">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif text-center mb-1">
+  Área da Organização
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mb-space-md">
+  Espaço restrito para os noivos acompanharem a lista e baixarem a planilha com os mimos.
+</p>
+<div class="mb-space-md">
+<input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-2xl px-4 py-3 text-center tracking-widest font-body-lg text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container shadow-xs" id="admin-pass-input" placeholder="Digite a senha..." type="password"/>
+<p class="hidden text-error font-body-sm text-[12px] text-center mt-1" id="admin-auth-error">Senha incorreta.</p>
+</div>
+<button class="w-full py-3 rounded-full bg-laranja text-on-laranja font-label-lg text-label-lg italic shadow-sm hover:bg-laranja-escuro transition-all" id="admin-login-btn" onclick="authenticateAdmin()">
+  Entrar no Painel
+</button>
+</div>
+</div>
+<!-- Modal 3: Full Admin Dashboard Modal -->
+<div class="fixed inset-0 z-50 hidden flex-col bg-surface overflow-y-auto" id="admin-panel-modal">
+<div class="w-full max-w-md mx-auto p-margin-mobile flex flex-col gap-space-md min-h-full">
+<!-- Admin Bar -->
+<div class="flex items-center justify-between pt-safe pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-serif">Painel dos Noivos</h2>
+<span class="font-label-md text-[11px] text-tertiary">Ágatha &amp; Matheus • Chá dos Noivos</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface" onclick="closeAdminPanel()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Financial & Reservation Summary Card -->
+<div class="rounded-3xl bg-surface-container-low border border-outline-variant/30 p-space-md shadow-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Balanço Atual</span>
+<div class="flex items-baseline justify-between mt-1 mb-space-sm">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary" id="admin-total-reserved-value">R$ 0,00</span>
+<span class="font-label-lg text-label-lg text-tertiary font-semibold" id="admin-total-reserved-count">0 mimos escolhidos</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="py-2.5 px-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-xs flex items-center justify-center gap-1.5 transition-all border border-outline-variant/30" onclick="exportCSV()">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Baixar CSV</span>
+</button>
+<button class="py-2.5 px-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-xs flex items-center justify-center gap-1.5 transition-all border border-outline-variant/30" onclick="copiarLinkLista()">
+<span class="material-symbols-outlined text-[18px] text-tertiary">share</span>
+<span>Enviar Link</span>
+</button>
+</div>
+</div>
+<!-- Reserved Items List -->
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-serif">Presentes Escolhidos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+  Lista detalhada com convidados e recados carinhosos. Você pode reabrir um presente se necessário.
+</p>
+<div class="flex flex-col gap-space-sm" id="admin-reserved-list">
+<!-- Injected via script -->
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification Feedback -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-on-primary shadow-lg animate-in fade-in slide-in-from-top-4 duration-300" id="app-toast">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-message">Presente reservado com carinho!</span>
+</div>
+</div>
+<script>
+  // Itens da planilha "Chá de Panela.xlsx" (fotos em assets/presentes/<id>.jpg)
+  const initialGifts = [
+    { id: 1, title: "Kit Escorredor 6 peças", price: 145.90, priceFormatted: 'R$ 145,90', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/01.jpg', link: "https://shopee.com.br/Kit-6-pe%C3%A7as-Escorredor-De-Arroz-Escorredor-De-Macarr%C3%A3o-Escorredor-telado-3-Peneiras-Inox-i.561341313.58209849223", imageAlt: "Kit Escorredor 6 peças" },
+    { id: 2, title: "Cuscuzeiro", price: 55.62, priceFormatted: 'R$ 55,62', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/02.jpg', link: "https://www.mercadolivre.com.br/cuscuzeiro-antiaderente-aluminio-teflon-tampa-vidro-15l-cor-cinza/p/MLB19977061", imageAlt: "Cuscuzeiro" },
+    { id: 3, title: "Forma Assadeira Redonda", price: 29.99, priceFormatted: 'R$ 29,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/03.jpg', link: "https://www.mercadolivre.com.br/forma-assadeira-redonda-24cm-antiaderente-para-bolo-e-pudim/up/MLBU3085472883", imageAlt: "Forma Assadeira Redonda" },
+    { id: 4, title: "Kit 3 Formas Com Fundo Removível", price: 59.90, priceFormatted: 'R$ 59,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/04.jpg', link: "https://www.mercadolivre.com.br/kit-3-formas-para-bolo-torta-com-fundo-removivel-antiaderente-aco-carbono-redondas-preto/p/MLB52421585", imageAlt: "Kit 3 Formas Com Fundo Removível" },
+    { id: 5, title: "Forma Assadeira Pudim", price: 25.90, priceFormatted: 'R$ 25,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/05.jpg', link: "https://www.mercadolivre.com.br/forma-assadeira-pudim-18cm-1l-aluminio-redar/up/MLBU3447939552", imageAlt: "Forma Assadeira Pudim" },
+    { id: 6, title: "Ralador", price: 19.99, priceFormatted: 'R$ 19,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/06.jpg', link: "https://www.amazon.com.br/RALADOR-FACES-A%C3%87O-INOX-ORIGINAL/dp/B08Y7F5NM9", imageAlt: "Ralador" },
+    { id: 7, title: "Espremedor de Batatas", price: 47.90, priceFormatted: 'R$ 47,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/07.jpg', link: "https://www.amazon.com.br/Espremedor-Amassador-Esmagador-Batatas-legumes/dp/B0F593RGF4/ref=pd_sbs_d_sccl_3_2/137-6897394-3179202", imageAlt: "Espremedor de Batatas" },
+    { id: 8, title: "Descascador Legumes", price: 29.73, priceFormatted: 'R$ 29,73', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/08.jpg', link: "https://www.mercadolivre.com.br/descascador-legumes-e-frutas-supreme-16cm-profissional-inox-prateado/p/MLB77205186", imageAlt: "Descascador Legumes" },
+    { id: 9, title: "Abridor De Latas", price: 19.99, priceFormatted: 'R$ 19,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/09.jpg', link: "https://www.mercadolivre.com.br/abridor-de-latas-em-aco-inox-com-cabo-ergonomico-wassay/up/MLBU3522360706", imageAlt: "Abridor De Latas" },
+    { id: 10, title: "Kit Cortador Pizza E Carretilha Fecha Pastel", price: 19.98, priceFormatted: 'R$ 19,98', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/10.jpg', link: "https://www.mercadolivre.com.br/kit-cortador-pizza-e-carretilha-fecha-pastel-inox-2-pecas/up/MLBU4325019443", imageAlt: "Kit Cortador Pizza E Carretilha Fecha Pastel" },
+    { id: 11, title: "Kit 4 Pegadores", price: 35.00, priceFormatted: 'R$ 35,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/11.jpg', link: "https://www.mercadolivre.com.br/kit-4-pegadores-inox-massa-salada-universal-20cm-gelo-18cm/up/MLBU3137749092", imageAlt: "Kit 4 Pegadores" },
+    { id: 12, title: "Kit Espatula E Pincel + Fouet", price: 24.00, priceFormatted: 'R$ 24,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/12.jpg', link: "https://www.mercadolivre.com.br/kit-culinario-espatula--e-pincel--fouet-batedor-de-ovos/up/MLBU3809023151", imageAlt: "Kit Espatula E Pincel + Fouet" },
+    { id: 13, title: "Kit 3 Peças Assadeiras Retangular", price: 62.31, priceFormatted: 'R$ 62,31', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/13.jpg', link: "https://www.mercadolivre.com.br/jogo-3-formas-assadeiras-retangular-aluminio-bolo-forno/up/MLBU1727413419", imageAlt: "Kit 3 Peças Assadeiras Retangular" },
+    { id: 14, title: "Kit 6 Peças Marinex", price: 199.00, priceFormatted: 'R$ 199,00', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/14.jpg', link: "https://www.mercadolivre.com.br/conjunto-assadeiras-6-pecas-de-vidro-com-tampa-cinza-marinex/p/MLB28025230", imageAlt: "Kit 6 Peças Marinex" },
+    { id: 15, title: "Kit 2 Assadeiras de Vidro", price: 57.99, priceFormatted: 'R$ 57,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/15.jpg', link: "https://www.mercadolivre.com.br/conjunto-assadeiras-retangular-2-pecas-15120200791391/p/MLB27659082", imageAlt: "Kit 2 Assadeiras de Vidro" },
+    { id: 16, title: "Faqueiro Tramontina 24 Peças", price: 64.90, priceFormatted: 'R$ 64,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/16.jpg', link: "https://www.mercadolivre.com.br/faqueiro-tramontina-buzios-cem-aco-inox-com-detalhe-24-pecas/p/MLB29913761", imageAlt: "Faqueiro Tramontina 24 Peças" },
+    { id: 17, title: "Jarra de Suco", price: 60.00, priceFormatted: 'R$ 60,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/17.jpg', link: "https://www.magazineluiza.com.br/jarra-home-style-lev/p/hgfj266gab/ud/udjr/", imageAlt: "Jarra de Suco" },
+    { id: 18, title: "Açucareiro", price: 31.50, priceFormatted: 'R$ 31,50', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/18.jpg', link: "https://www.mercadolivre.com.br/acucareiro-com-tampa-e-colher-radial-cristal-lyor-vidro-incolor-elegante-premium/p/MLB70019339", imageAlt: "Açucareiro" },
+    { id: 19, title: "Manta De Microfibra Queen Casal", price: 71.90, priceFormatted: 'R$ 71,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/19.jpg', link: "https://shopee.com.br/Manta-De-Microfibra-Queen-Casal-Toque-Extra-Macio-Antial%C3%A9rgico-Quentinho-Flanel-Habitat-i.1526576446.19999705731", imageAlt: "Manta De Microfibra Queen Casal" },
+    { id: 20, title: "Jogo 6 Copos Vidro 300ml", price: 36.90, priceFormatted: 'R$ 36,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/20.jpg', link: "https://www.mercadolivre.com.br/jogo-6-copos-vidro-nadir-lights-300ml-agua-suco/up/MLBU5251753494", imageAlt: "Jogo 6 Copos Vidro 300ml" },
+    { id: 21, title: "Jogo 6 Copos Vidro 465ml", price: 37.30, priceFormatted: 'R$ 37,30', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/21.jpg', link: "https://www.mercadolivre.com.br/jogo-de-copos-aruba-nadir-465ml-6-pecas-transparente/p/MLB23078811", imageAlt: "Jogo 6 Copos Vidro 465ml" },
+    { id: 22, title: "Kit 4 Potes Quadrados de Vidro com Tampa de Bambu", price: 109.00, priceFormatted: 'R$ 109,00', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/22.jpg', link: "https://shopee.com.br/product/442438082/21999227874", imageAlt: "Kit 4 Potes Quadrados de Vidro com Tampa de Bambu" },
+    { id: 23, title: "Kit 6 Organizadores de Geladeira", price: 64.99, priceFormatted: 'R$ 64,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/23.jpg', link: "https://www.mercadolivre.com.br/kit-6-organizadores-geladeira-alimentos-legumes-verduras-frutas-transparente-com-tampa-trava-hermetico-escorredor-starhouse/p/MLB75608421", imageAlt: "Kit 6 Organizadores de Geladeira" },
+    { id: 24, title: "Cesto De Roupas De Bambu 50 Litros", price: 71.90, priceFormatted: 'R$ 71,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/24.jpg', link: "https://www.mercadolivre.com.br/cesto-de-roupas-de-bambu-50-litros-yikasa/p/MLB51116502", imageAlt: "Cesto De Roupas De Bambu 50 Litros" },
+    { id: 25, title: "Kit Toalha Lavabo 4 Peças", price: 53.90, priceFormatted: 'R$ 53,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/25.jpg', link: "https://shopee.com.br/Kit-Toalha-Lavabo-Wave-4-Pe%C3%A7as-100-Algod%C3%A3o-30-x-50cm-(ESTE-PRODUTO-N%C3%83O-%C3%89-UMA-TOALHA-DE-ROSTO)-i.889926198.20299003120", imageAlt: "Kit Toalha Lavabo 4 Peças" },
+    { id: 26, title: "Kit 3 Tapetes De Banheiro", price: 78.64, priceFormatted: 'R$ 78,64', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/26.jpg', link: "https://www.mercadolivre.com.br/kit-3-tapete-de-banheiro-super-soft-absorvete-antiderrapa/up/MLBU3783105558", imageAlt: "Kit 3 Tapetes De Banheiro" },
+    { id: 27, title: "Jogo de Colheres Tramontina 4 peças", price: 64.90, priceFormatted: 'R$ 64,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/27.jpg', link: "https://www.mercadolivre.com.br/jogo-de-utensilios-tramontina-4-pecas-ability-nylon-25199001/p/MLB26310063", imageAlt: "Jogo de Colheres Tramontina 4 peças" },
+    { id: 28, title: "Manteigueira", price: 53.00, priceFormatted: 'R$ 53,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/28.jpg', link: "https://shopee.com.br/Manteigueira-Mauve-17cm-Cristal-Wolff-para-Manteiga-Caf%C3%A9-da-Manh%C3%A3-Mesa-Posta-Servir-Organiza%C3%A7%C3%A3o-Elegante-Sofisticada-Uso-i.869809385.45555526006", imageAlt: "Manteigueira" },
+    { id: 29, title: "Porta Mel De Vidro", price: 49.90, priceFormatted: 'R$ 49,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/29.jpg', link: "https://shopee.com.br/Meleira-Pote-Porta-Mel-De-Vidro-460ml-com-Tampa-de-Bambu-e-Pegador-i.1320694544.23295067117", imageAlt: "Porta Mel De Vidro" },
+    { id: 30, title: "Queijeira", price: 74.90, priceFormatted: 'R$ 74,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/30.jpg', link: "https://shopee.com.br/Queijeira-Wolff-Porta-Queijo-com-Tampa-Transparente-de-Cristal-Pearl-Bolinhas-Requintada-Luxo-Grande-em-Vidro-i.1232189651.22597463545", imageAlt: "Queijeira" },
+    { id: 31, title: "Kit Bowls de Vidro 150ml", price: 59.90, priceFormatted: 'R$ 59,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/31.jpg', link: "https://shopee.com.br/Kit-Bowls-de-Vidro-150ml-Toffee-Tigela-Sobremesa-Petisqueira-Transparente-Mesa-Posta-6-a-24-Pe%C3%A7as-i.505682429.11327656858", imageAlt: "Kit Bowls de Vidro 150ml" },
+    { id: 32, title: "Conjunto 5 Potes 370ML", price: 52.89, priceFormatted: 'R$ 52,89', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/32.jpg', link: "https://shopee.com.br/Conjunto-2-3-5-10-Potes-370-640-1040ml-Vidro-Herm%C3%A9tico-Mantimentos-Marmita-Fitness-i.1345719405.20999381894", imageAlt: "Conjunto 5 Potes 370ML" },
+    { id: 33, title: "Mop Spin Giratório com Balde 9L", price: 42.99, priceFormatted: 'R$ 42,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/33.jpg', link: "https://www.mercadolivre.com.br/mop-spin-giratorio-com-balde-cesto-inox-9l/p/MLB22798474", imageAlt: "Mop Spin Giratório com Balde 9L" },
+    { id: 34, title: "Balde Retrátil de Silicone Multiuso", price: 30.00, priceFormatted: 'R$ 30,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/34.jpg', link: "https://www.amazon.com.br/Retr%C3%A1til-Silicone-Dobr%C3%A1vel-Multiuso-Litros/dp/B0CMV47J8J/ref=asc_df_B0CMV47J8J", imageAlt: "Balde Retrátil de Silicone Multiuso" },
+    { id: 35, title: "Centrífuga De Salada", price: 32.90, priceFormatted: 'R$ 32,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/35.jpg', link: "https://www.mercadolivre.com.br/centrifuga-de-salada-secador-verduras-manual-4-litros-preto-wow-world-of-wonders/p/MLB54070676", imageAlt: "Centrífuga De Salada" },
+    { id: 36, title: "Colheres Medidoras Inox 5 Peças", price: 25.00, priceFormatted: 'R$ 25,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/36.jpg', link: "https://www.mercadolivre.com.br/conjunto-de-colheres-medidoras-inox-5-pecas--mimo-style/up/MLBU1171381856", imageAlt: "Colheres Medidoras Inox 5 Peças" },
+    { id: 37, title: "Jogo de Facas Tramontina 7 peças", price: 52.41, priceFormatted: 'R$ 52,41', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/37.jpg', link: "https://www.mercadolivre.com.br/jogo-de-facas-tramontina-plenus-7-pecas-preto-23498066/p/MLB27410772", imageAlt: "Jogo de Facas Tramontina 7 peças" },
+    { id: 38, title: "Liquidificador de Click Full Oster Preto", price: 151.21, priceFormatted: 'R$ 151,21', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/38.jpg', link: "https://www.amazon.com.br/Liquidificador-1400-Full-Preto-Oster/dp/B08DFCF9HW/ref=asc_df_B08DFCF9HW", imageAlt: "Liquidificador de Click Full Oster Preto" },
+    { id: 39, title: "Chaleira Elétrica", price: 39.90, priceFormatted: 'R$ 39,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/39.jpg', link: "https://www.mercadolivre.com.br/chaleira-eletrica-inox-18l-220v-jarra-eletrica-base-360-resistencia-oculta-luz-led-desligamento-automatico-para-cafe-cha-leite/p/MLB75088702", imageAlt: "Chaleira Elétrica" },
+    { id: 40, title: "Tábua De Corte", price: 39.90, priceFormatted: 'R$ 39,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/40.jpg', link: "https://www.mercadolivre.com.br/tabua-inox-gourmet-aco-inoxidavel-304-prateado-46x30-cm-luxo/up/MLBU3881567016", imageAlt: "Tábua De Corte" },
+    { id: 41, title: "Conjunto de Pratos Rasos 6 Peças", price: 54.78, priceFormatted: 'R$ 54,78', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/41.jpg', link: "https://shopee.com.br/Conjunto-de-Pratos-Rasos-Nadir-Opaline-%E2%80%93-Eleg%C3%A2ncia-e-Resist%C3%AAncia-para-o-Dia-a-Dia-i.1273646622.23298743945", imageAlt: "Conjunto de Pratos Rasos 6 Peças" },
+    { id: 42, title: "Cesta de Pão", price: 41.86, priceFormatted: 'R$ 41,86', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/42.jpg', link: "https://shopee.com.br/Cesta-de-P%C3%A3o-Rattan-com-Forro-de-Tecido-Lav%C3%A1vel-21cm-Redonda-para-Mesa-Posta-e-Caf%C3%A9-da-Manh%C3%A3-Lyor-i.1780392243.45612561240", imageAlt: "Cesta de Pão" },
+    { id: 43, title: "Kit 5 Panos de Prato Tricoline", price: 73.80, priceFormatted: 'R$ 73,80', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/43.jpg', link: "https://shopee.com.br/Kit-5-Panos-de-Prato-Tricoline-100-Algod%C3%A3o-45x70cm-com-Saquinho-Presente%C3%A1vel-i.400207966.20899326329", imageAlt: "Kit 5 Panos de Prato Tricoline" },
+    { id: 44, title: "Luva Térmica", price: 17.85, priceFormatted: 'R$ 17,85', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/44.jpg', link: "https://shopee.com.br/Allmini-Kit-Luva-T%C3%A9rmica-com-Descanso-de-Panela-Girassol-i.484607579.22894424124", imageAlt: "Luva Térmica" },
+    { id: 45, title: "Garrafa de Água 1L", price: 36.99, priceFormatted: 'R$ 36,99', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/45.jpg', link: "https://shopee.com.br/Garrafa-Herm%C3%A9tica-Lyor-Aura-1-Litro-Vidro-com-Tampa-Jarra-para-%C3%81gua-Suco-Ch%C3%A1-Leite-Geladeira-Mesa-Posta-Presente-Cozinha-i.869809385.47254762830", imageAlt: "Garrafa de Água 1L" },
+    { id: 46, title: "Kit 2 Toalhas de Banho Grande", price: 125.89, priceFormatted: 'R$ 125,89', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/46.jpg', link: "https://shopee.com.br/Kit-2-Toalhas-de-Banho-Grande-Super-Luxo-Premium-100-Algod%C3%A3o-Grossa-Macia-Absor%C3%A7%C3%A3o-Superior-i.1733429073.58204647617", imageAlt: "Kit 2 Toalhas de Banho Grande" },
+    { id: 47, title: "Jogo De 5 Tigelas Bowl", price: 55.90, priceFormatted: 'R$ 55,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/47.jpg', link: "https://shopee.com.br/Jogo-De-5-Tigelas-Bowl-Inox-Multiuso-Com-Medi%C3%A7%C3%A3o-Empilh%C3%A1vel-14cm-16cm-20cm-22cm-24cm-Cozinha-i.371336179.29744567206", imageAlt: "Jogo De 5 Tigelas Bowl" },
+    { id: 48, title: "Peça Garrafa de Óleo de Cerâmica Pintada à Mão", price: 72.68, priceFormatted: 'R$ 72,68', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/48.jpg', link: "https://br.shein.com/1pc-Hand-Painted-Ceramic-Lemon-Shaped-Oil-Bottle-Lemon-Shaped-Soy-Sauce-Bottle-With-Tilted-Spout-For-Vinegar-And-Seasoning-Suitable-For-Home-Kitchen-Storage-Of-Olive-Oil-Vinegar-And-Soy-Sauce-Can-Be-Used-As-Gift-And-Holiday-Decoration-p-523591751.html", imageAlt: "Peça Garrafa de Óleo de Cerâmica Pintada à Mão" },
+    { id: 49, title: "Jogo de Mesa", price: 64.90, priceFormatted: 'R$ 64,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/49.jpg', link: "https://shopee.com.br/DARNELL-Almofada-De-Talheres-Irregular-De-4-Pe%C3%A7as-Tapete-De-Mesa-Retr%C3%B4-%C3%80-Prova-D'%C3%A1gua-Lav%C3%A1vel-Resistente-A-Arranh%C3%B5es-i.1754712609.58208659502", imageAlt: "Jogo de Mesa" },
+    { id: 50, title: "Espátula Em Inox", price: 20.00, priceFormatted: 'R$ 20,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/50.jpg', link: "https://shopee.com.br/Esp%C3%A1tula-Em-Inox-Pr%C3%A1tica-Raspador-De-Massa-Com-Cabo-Tubular-15cm-i.1758895695.58256828425", imageAlt: "Espátula Em Inox" },
+    { id: 51, title: "Kit 6 Forminhas de Silicone + Forma de Cupcake", price: 50.00, priceFormatted: 'R$ 50,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/51.jpg', link: "https://shopee.com.br/Kit-12-ou-6-Forminhas-de-Silicone-N%C3%A3o-Gruda-Forma-de-Cupcake-12-ou-6-Cavidades-Antiaderente-Empada-i.1257468988.58201905611", imageAlt: "Kit 6 Forminhas de Silicone + Forma de Cupcake" },
+    { id: 52, title: "Molde para Hambúrguer", price: 27.90, priceFormatted: 'R$ 27,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/52.jpg', link: "https://shopee.com.br/Molde-para-Hamb%C3%BArguer-Forma-5-Pe%C3%A7as-Base-Remov%C3%ADvel-Grande-e-Pequena-i.566484985.58212030835", imageAlt: "Molde para Hambúrguer" },
+    { id: 53, title: "Borrifador Pulverizador Frasco Spray 2 unidades", price: 54.90, priceFormatted: 'R$ 54,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/53.jpg', link: "https://shopee.com.br/Borrifador-Pulverizador-Frasco-Spray-Multiuso-Lavanderia-500ml-Flow-Ou-i.1314243679.22893722489", imageAlt: "Borrifador Pulverizador Frasco Spray 2 unidades" },
+    { id: 54, title: "Kit Lavanderia 3 Dispenser", price: 79.90, priceFormatted: 'R$ 79,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/54.jpg', link: "https://shopee.com.br/Kit-Lavanderia-3-Dispenser-para-Sab%C3%A3o-L%C3%ADquido-ou-em-P%C3%B3-1-5L-Branco-OU-i.1270189717.55910374939", imageAlt: "Kit Lavanderia 3 Dispenser" },
+    { id: 55, title: "Garrafa de Vidro 1 Litro Tampa Inox", price: 29.90, priceFormatted: 'R$ 29,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/55.jpg', link: "https://shopee.com.br/Garrafa-de-Vidro-1-Litro-Tampa-Inox-Para-%C3%81gua-Suco-Leite-Geladeira-Jarra-Fechamento-Herm%C3%A9tico-i.1593863526.50557380637", imageAlt: "Garrafa de Vidro 1 Litro Tampa Inox" },
+    { id: 56, title: "Kit 4 Almofadas 45x45cm", price: 28.90, priceFormatted: 'R$ 28,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/56.jpg', link: "https://shopee.com.br/Kit-ate-4-Almofadas-45cm-x-45cm-de-Espuma-Extra-Macio-Envio-Imediato-i.796409160.45966172839", imageAlt: "Kit 4 Almofadas 45x45cm" },
+    { id: 57, title: "Kit 4 Capas de Almofada 45x45cm", price: 118.90, priceFormatted: 'R$ 118,90', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/57.jpg', link: "https://shopee.com.br/Capas-de-Almofada-45x45cm-em-Jacquard-Pied-Poule-para-sof%C3%A1-C-Z%C3%ADper-Invis%C3%ADvel-i.1552599629.22699187865", imageAlt: "Kit 4 Capas de Almofada 45x45cm" },
+    { id: 58, title: "Manta Para Sofá Cru", price: 60.00, priceFormatted: 'R$ 60,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/58.jpg', link: "https://shopee.com.br/Manta-Pra-Sof%C3%A1-Gigantes-Tipo-Capa-100-Algod%C3%A3o-*Promo%C3%A7%C3%A3o*-i.332667864.9715263398", imageAlt: "Manta Para Sofá Cru" },
+    { id: 59, title: "Kit 10 Organizadores Multiuso", price: 79.90, priceFormatted: 'R$ 79,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/59.jpg', link: "https://shopee.com.br/Kit-10-Organizadores-Multiuso-Para-Geladeira-Cozinha-E-Despensa-Em-Acr%C3%ADlico-Transparente-i.318621368.40676663478", imageAlt: "Kit 10 Organizadores Multiuso" },
+    { id: 60, title: "Fruteira de Vidro Decorativa Ondulada", price: 65.00, priceFormatted: 'R$ 65,00', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/60.jpg', link: "https://shopee.com.br/Fruteira-de-Vidro-Decorativa-Ondulada-%E2%80%93-Centro-de-Mesa-Elegante-para-Cozinha-Moderna-i.1626194943.58208758847", imageAlt: "Fruteira de Vidro Decorativa Ondulada" },
+    { id: 61, title: "Kit 6 Potes de Vidro 100ml para Temperos", price: 26.90, priceFormatted: 'R$ 26,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/61.jpg', link: "https://shopee.com.br/Kit-6-10-Potes-de-Vidro-100ml-para-Temperos-%E2%80%93-Organizador-Pr%C3%A1tico-Dur%C3%A1vel-e-Ideal-para-sua-Cozinha-i.1172328648.19198296614", imageAlt: "Kit 6 Potes de Vidro 100ml para Temperos" },
+    { id: 62, title: "Kit 4 Caixas Organizadoras Dobrável em Linho", price: 65.80, priceFormatted: 'R$ 65,80', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/62.jpg', link: "https://shopee.com.br/KIT-4-6-Caixa-Organizadora-Dobr%C3%A1vel-em-Linho-com-Visor-para-Roupas-Cobertores-Arm%C3%A1rio-Organizado-i.1518074725.22694808681", imageAlt: "Kit 4 Caixas Organizadoras Dobrável em Linho" },
+    { id: 63, title: "Kit Jogo 50 Cabides de Veludo Bege", price: 66.89, priceFormatted: 'R$ 66,89', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/63.jpg', link: "https://shopee.com.br/Kit-Jogo-50-Cabides-de-Veludo-Slim-Adulto-360%C2%B0-Antideslizante-Para-Roupas-i.1096365717.51467972822", imageAlt: "Kit Jogo 50 Cabides de Veludo Bege" },
+    { id: 64, title: "Jogo de Panelas Inox 2 Peças Allegra", price: 289.00, priceFormatted: 'R$ 289,00', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/64.jpg', link: "https://www.mercadolivre.com.br/jogo-de-panelas-allegra-em-aco-inox-com-fundo-triplo-e-tampas-de-inox-2-pecas-prateado-tramontina/p/MLB35503286", imageAlt: "Jogo de Panelas Inox 2 Peças Allegra" },
+    { id: 65, title: "Panela Inox 16cm Allegra", price: 152.16, priceFormatted: 'R$ 152,16', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/65.jpg', link: "https://www.mercadolivre.com.br/panela-inox-16cm-allegra-tramontina-62651161/p/MLB35442077", imageAlt: "Panela Inox 16cm Allegra" },
+    { id: 66, title: "Frigideira Inox 20cm Allegra", price: 183.36, priceFormatted: 'R$ 183,36', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/66.jpg', link: "https://www.mercadolivre.com.br/frigideira-tramontina-allegra-inox-20-cm-com-tampa/p/MLB66188640", imageAlt: "Frigideira Inox 20cm Allegra" },
+    { id: 67, title: "Fervedor Inox 12 Cm Allegra", price: 89.28, priceFormatted: 'R$ 89,28', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/67.jpg', link: "https://www.mercadolivre.com.br/fervedor-allegra-em-aco-inox-12-cm-14-l-tramontina/p/MLB25868910", imageAlt: "Fervedor Inox 12 Cm Allegra" },
+    { id: 68, title: "Conjunto 3 Potes de Vidro Com Tampa Cortiça", price: 96.08, priceFormatted: 'R$ 96,08', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/68.jpg', link: "https://shopee.com.br/Conjunto-3-Porta-Mantimentos-de-Vidro-Com-Tampa-Corti%C3%A7a-Elegante-i.838774284.22093595688", imageAlt: "Conjunto 3 Potes de Vidro Com Tampa Cortiça" },
+    { id: 69, title: "Panela Pressão Inox", price: 199.00, priceFormatted: 'R$ 199,00', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/69.jpg', link: "https://www.mercadolivre.com.br/panela-pressao-42l-inducao-ceramica-4-valvulas-seguranca-inox/p/MLB78929483", imageAlt: "Panela Pressão Inox" },
+    { id: 70, title: "Kit 4 Bowls Porcelana 250ml Coloridos", price: 62.90, priceFormatted: 'R$ 62,90', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/70.jpg', link: "https://shopee.com.br/product/1035946089/58217381374", imageAlt: "Kit 4 Bowls Porcelana 250ml Coloridos" },
+    { id: 71, title: "Jogo De Lençol Branco Algodão 4 Peças Com Elástico Casal", price: 189.00, priceFormatted: 'R$ 189,00', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/71.jpg', link: "https://shopee.com.br/Jogo-De-Len%C3%A7ol-Algod%C3%A3o-4-Pe%C3%A7as-Com-El%C3%A1stico-Casal-Padr%C3%A3o-Queen-King-Direto-da-Fabrica-i.514350634.23936880323", imageAlt: "Jogo De Lençol Branco Algodão 4 Peças Com Elástico Casal" },
+    { id: 72, title: "Kit Manta de Tricot Sofá Poltrona", price: 119.46, priceFormatted: 'R$ 119,46', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/72.jpg', link: "https://shopee.com.br/Kit-Manta-Tricot-150x100cm-com-Capas-de-Almofada-Design-Moderno-e-Conforto-Aconchegante-i.304699847.22498792399", imageAlt: "Kit Manta de Tricot Sofá Poltrona" },
+    { id: 73, title: "Kit Colcha Percal 300 Fios Matelassê Casal", price: 129.99, priceFormatted: 'R$ 129,99', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/73.jpg', link: "https://shopee.com.br/Kit-Colcha-Percal-300-Fios-Matelass%C3%AA-em-Alto-Relevo-Mosaico-03-Pe%C3%A7as-i.1598048048.54816421119", imageAlt: "Kit Colcha Percal 300 Fios Matelassê Casal" },
+    { id: 74, title: "Kit Colcha Cobre Leito Casal 3 Peças Cerejas", price: 129.99, priceFormatted: 'R$ 129,99', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/74.jpg', link: "https://shopee.com.br/Colcha-Cobre-Leito-Casal-3-Pe%C3%A7as-Essencialle-Algod%C3%A3o-Misto-Cereja-i.1229342617.23899028635", imageAlt: "Kit Colcha Cobre Leito Casal 3 Peças Cerejas" },
+    { id: 75, title: "Jogo de Toalha Algodão Egípcio Branca 04 Peças", price: 184.38, priceFormatted: 'R$ 184,38', categoryPrice: 'above-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/75.jpg', link: "https://shopee.com.br/Jogo-de-Toalha-Algod%C3%A3o-Eg%C3%ADpcio-Branca-04-Pe%C3%A7as-Banh%C3%A3o-Gigante-Quefren-(2-Banho-2-Rosto)-LMpeter-i.384355813.19497871365", imageAlt: "Jogo de Toalha Algodão Egípcio Branca 04 Peças" },
+    { id: 76, title: "Kit Potes de Vidro 640ml 5 Unidades", price: 77.88, priceFormatted: 'R$ 77,88', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/76.jpg', link: "https://shopee.com.br/Kit-Potes-de-Vidro-640ml-340ml-Herm%C3%A9tico-Marmita-Fit-com-Tampa-4-Travas-i.279375549.22299038596", imageAlt: "Kit Potes de Vidro 640ml 5 Unidades" },
+    { id: 77, title: "Kit 4 Super Panos De Chão Grandes", price: 36.75, priceFormatted: 'R$ 36,75', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/77.jpg', link: "https://shopee.com.br/product/408653169/23615780781", imageAlt: "Kit 4 Super Panos De Chão Grandes" },
+    { id: 78, title: "Caneca Creamy Milk Lyor 180ml Branca Cerâmica 2 Unidades", price: 53.98, priceFormatted: 'R$ 53,98', categoryPrice: 'up-to-80', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/78.jpg', link: "https://shopee.com.br/Caneca-Creamy-Milk-Lyor-180ml-Branca-Cer%C3%A2mica-i.869809385.41928431984", imageAlt: "Caneca Creamy Milk Lyor 180ml Branca Cerâmica 2 Unidades" },
+    { id: 79, title: "Chaleira de Alumínio esmaltada Floral Vintage", price: 109.16, priceFormatted: 'R$ 109,16', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/79.jpg', link: "https://shopee.com.br/Chaleira-de-alum%C3%ADnio-esmaltada-Floral-Vintage-Luxo-com-al%C3%A7a-2-litros-Fog%C3%A3o-induc%C3%A3o-e-convencional-i.1624936640.58217317514", imageAlt: "Chaleira de Alumínio esmaltada Floral Vintage" },
+    { id: 80, title: "Ferro de Passar a Vapor e Seco Electrolux", price: 117.32, priceFormatted: 'R$ 117,32', categoryPrice: '80-to-150', status: 'available', reservedBy: null, message: null, image: 'assets/presentes/80.jpg', link: "https://shopee.com.br/Ferro-de-Passar-a-Vapor-e-Seco-Electrolux-Efficient-Base-Antiaderente-ESI10-i.1630032069.20799890060", imageAlt: "Ferro de Passar a Vapor e Seco Electrolux" }
+  ];
+
+  let catalog = [...initialGifts];
+
+  // URL do App da Web do Google Apps Script (termina em /exec). Veja google-apps-script/Codigo.gs.
+  // Vazia = modo de teste: as reservas ficam só na memória e somem ao recarregar.
+  const PLANILHA_URL = '';
+  let adminSenha = null;
+
+  function escapeHtml(texto) {
+    return String(texto ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  async function chamarPlanilha(dados) {
+    // text/plain evita o preflight de CORS, que o Apps Script não responde
+    const resp = await fetch(PLANILHA_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(dados),
+    });
+    return resp.json();
+  }
+
+  // reservas: [{ id, nome, recado? }] — o recado só vem para os noivos (acao 'admin')
+  function aplicarReservas(reservas) {
+    const porId = new Map(reservas.map(r => [Number(r.id), r]));
+    catalog.forEach(item => {
+      const r = porId.get(item.id);
+      item.status = r ? 'reserved' : 'available';
+      item.reservedBy = r ? r.nome : null;
+      item.message = r && r.recado ? r.recado : null;
+    });
+    renderCatalog();
+  }
+
+  async function carregarReservas() {
+    if (!PLANILHA_URL) return;
+    try {
+      const resp = await (await fetch(PLANILHA_URL)).json();
+      if (resp.ok && !adminSenha) aplicarReservas(resp.reservas);
+    } catch (e) {
+      console.error('Erro ao carregar reservas', e);
+      showAdminToast('Não foi possível carregar a lista. Recarregue a página.');
+    }
+  }
+
+  async function carregarReservasAdmin() {
+    const resp = await chamarPlanilha({ acao: 'admin', senha: adminSenha });
+    if (resp.ok) aplicarReservas(resp.reservas);
+    return resp;
+  }
+  let currentFilter = 'all'; // 'all', 'available', 'reserved'
+  let currentSearch = '';
+  let currentPriceFilter = 'all';
+  let activeModalItemId = null;
+
+  function renderCatalog() {
+    const grid = document.getElementById('catalog-grid');
+    const emptyState = document.getElementById('catalog-empty');
+    grid.innerHTML = '';
+
+    const filtered = catalog.filter(item => {
+      // Tab filter
+      if (currentFilter === 'available' && item.status !== 'available') return false;
+      if (currentFilter === 'reserved' && item.status !== 'reserved') return false;
+
+      // Price filter
+      if (currentPriceFilter !== 'all') {
+        if (currentPriceFilter === 'up-to-80' && item.price > 80) return false;
+        if (currentPriceFilter === '80-to-150' && (item.price < 80 || item.price > 150)) return false;
+        if (currentPriceFilter === 'above-150' && item.price <= 150) return false;
+      }
+
+      // Search term
+      if (currentSearch.trim() !== '') {
+        const query = currentSearch.toLowerCase();
+        const matchTitle = item.title.toLowerCase().includes(query);
+        const matchGiver = item.reservedBy ? item.reservedBy.toLowerCase().includes(query) : false;
+        if (!matchTitle && !matchGiver) return false;
+      }
+
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      grid.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+    } else {
+      grid.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        const isReserved = item.status === 'reserved';
+
+        // Editorial Horizontal Detailed Row Layout
+        card.className = `rounded-3xl p-3 bg-surface-container-lowest border border-outline-variant/35 shadow-xs transition-all ${
+          isReserved ? 'opacity-80 bg-surface-container-low/60' : 'hover:shadow-md hover:border-primary/30'
+        }`;
+
+        card.innerHTML = `
+          <div class="flex gap-3.5 items-stretch">
+            <!-- Left: Larger Horizontal Photo -->
+            <div class="w-28 h-28 shrink-0 rounded-2xl overflow-hidden bg-surface-container relative border border-outline-variant/25">
+              <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" class="w-full h-full object-contain bg-white ${isReserved ? 'grayscale-[25%]' : ''}">
+              ${
+                isReserved
+                  ? `<div class="absolute inset-0 bg-inverse-surface/30 backdrop-blur-[1px] flex items-center justify-center p-1.5 text-center">
+                       <span class="w-7 h-7 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-xs">
+                         <span class="material-symbols-outlined text-[15px]">favorite</span>
+                       </span>
+                     </div>`
+                  : `<span class="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/95 font-label-md text-[9px] text-tertiary font-semibold uppercase tracking-wider shadow-xs">
+                       Disponível
+                     </span>`
+              }
+            </div>
+
+            <!-- Right: Item Details & Action -->
+            <div class="flex-1 flex flex-col justify-between py-0.5 min-w-0">
+              <div>
+                <div class="flex items-start justify-between gap-1 mb-1">
+                  <h4 class="font-body-sm text-[13px] font-semibold text-on-surface line-clamp-2 leading-snug">
+                    ${item.title}
+                  </h4>
+                </div>
+                <div class="flex items-baseline gap-1.5 mb-1.5">
+                  <span class="font-label-md text-[11px] text-on-surface-variant">Sugerido:</span>
+                  <span class="font-body-md text-[15px] font-bold text-primary font-sans">
+                    ${item.priceFormatted}
+                  </span>
+                </div>
+                <a href="${item.link}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 mb-1.5 font-label-md text-[12px] text-tertiary underline underline-offset-2 hover:text-laranja-escuro">
+                  <span class="material-symbols-outlined text-[14px]">open_in_new</span>Ver na loja
+                </a>
+              </div>
+
+              <!-- Status or Reserved Info & Button -->
+              <div>
+                ${
+                  isReserved
+                    ? `<div class="p-1.5 rounded-xl bg-surface-container border border-outline-variant/30 flex items-center justify-between gap-1">
+                         <div class="flex items-center gap-1 min-w-0">
+                           <span class="material-symbols-outlined text-[13px] text-primary">favorite</span>
+                           <span class="font-label-md text-[11px] text-on-surface font-medium truncate">
+                             Escolhido por <span class="font-semibold text-primary">${escapeHtml(item.reservedBy || 'Convidado')}</span>
+                           </span>
+                         </div>
+                       </div>`
+                    : `<button onclick="openGiftModal(${item.id})" class="w-full py-1.5 px-3 rounded-full bg-laranja text-on-laranja hover:bg-laranja-escuro font-label-md text-[13px] italic flex items-center justify-center gap-1.5 active:scale-[0.98] transition-all shadow-[0_3px_8px_rgba(40,40,60,0.18)]">
+                         <span class="material-symbols-outlined text-[15px]">redeem</span>
+                         <span class="font-semibold">Presentear</span>
+                       </button>`
+                }
+              </div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    updateCounters();
+  }
+
+  function updateCounters() {
+    const total = catalog.length;
+    const reservedCount = catalog.filter(i => i.status === 'reserved').length;
+    const availableCount = total - reservedCount;
+
+    document.getElementById('counter-total').innerText = total;
+    document.getElementById('counter-available').innerText = availableCount;
+    document.getElementById('counter-reserved').innerText = reservedCount;
+
+    document.getElementById('tab-count-all').innerText = total;
+    document.getElementById('tab-count-available').innerText = availableCount;
+    document.getElementById('tab-count-reserved').innerText = reservedCount;
+  }
+
+  function setCatalogFilter(filter) {
+    currentFilter = filter;
+
+    const tabs = ['all', 'available', 'reserved'];
+    tabs.forEach(t => {
+      const btn = document.getElementById(`tab-${t}`);
+      if (t === filter) {
+        btn.className = 'flex-1 py-1.5 rounded-xl text-center font-label-md text-[12px] transition-all bg-primary text-on-primary shadow-xs font-semibold';
+      } else {
+        btn.className = 'flex-1 py-1.5 rounded-xl text-center font-label-md text-[12px] text-on-surface-variant transition-all hover:text-on-surface font-normal';
+      }
+    });
+
+    renderCatalog();
+  }
+
+  // Search and Select Event Listeners
+  document.getElementById('catalog-search').addEventListener('input', (e) => {
+    currentSearch = e.target.value;
+    renderCatalog();
+  });
+
+  document.getElementById('catalog-price-filter').addEventListener('change', (e) => {
+    currentPriceFilter = e.target.value;
+    renderCatalog();
+  });
+
+  // Gift Modal Handlers
+  function openGiftModal(id) {
+    const item = catalog.find(i => i.id === id);
+    if (!item) return;
+
+    activeModalItemId = id;
+    document.getElementById('modal-item-title').innerText = item.title;
+    document.getElementById('modal-item-price').innerText = item.priceFormatted;
+    const modalImg = document.getElementById('modal-item-image');
+    modalImg.src = item.image;
+    modalImg.alt = item.imageAlt;
+    document.getElementById('giver-name-input').value = '';
+    document.getElementById('giver-message-input').value = '';
+    document.getElementById('giver-error').classList.add('hidden');
+
+    const modal = document.getElementById('gift-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeGiftModal() {
+    const modal = document.getElementById('gift-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    activeModalItemId = null;
+  }
+
+  async function confirmGiftReservation() {
+    const nameInput = document.getElementById('giver-name-input');
+    const msgInput = document.getElementById('giver-message-input');
+    const nameVal = nameInput.value.trim();
+
+    if (!nameVal) {
+      document.getElementById('giver-error').classList.remove('hidden');
+      return;
+    }
+
+    const item = catalog.find(i => i.id === activeModalItemId);
+    if (!item) return;
+
+    if (PLANILHA_URL) {
+      const btn = document.getElementById('confirm-gift-btn');
+      btn.disabled = true;
+      btn.classList.add('opacity-60');
+      try {
+        const resp = await chamarPlanilha({
+          acao: 'reservar', id: item.id, presente: item.title, valor: item.price,
+          nome: nameVal, recado: msgInput.value.trim(),
+        });
+        if (!resp.ok) {
+          closeGiftModal();
+          if (resp.erro === 'ja_reservado') {
+            showAdminToast('Esse presente acabou de ser escolhido por outra pessoa. Escolha outro! 💛');
+            await carregarReservas();
+          } else {
+            showAdminToast('Não foi possível reservar. Tente de novo.');
+          }
+          return;
+        }
+      } catch (e) {
+        console.error('Erro ao reservar', e);
+        showAdminToast('Sem conexão com a lista. Tente de novo.');
+        return;
+      } finally {
+        btn.disabled = false;
+        btn.classList.remove('opacity-60');
+      }
+    }
+
+    item.status = 'reserved';
+    item.reservedBy = nameVal;
+    item.message = msgInput.value.trim() || null;
+
+    closeGiftModal();
+    renderCatalog();
+    showAdminToast('Presente reservado com carinho! ❤️');
+  }
+
+  // Admin Security & Dashboard Handlers
+  function openAdminModal() {
+    const modal = document.getElementById('admin-auth-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeAdminAuthModal() {
+    const modal = document.getElementById('admin-auth-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.getElementById('admin-auth-error').classList.add('hidden');
+  }
+
+  async function authenticateAdmin() {
+    const pass = document.getElementById('admin-pass-input').value;
+    const erro = document.getElementById('admin-auth-error');
+    if (!pass.trim()) {
+      erro.classList.remove('hidden');
+      return;
+    }
+
+    if (PLANILHA_URL) {
+      const btn = document.getElementById('admin-login-btn');
+      btn.disabled = true;
+      try {
+        adminSenha = pass;
+        const resp = await carregarReservasAdmin();
+        if (!resp.ok) {
+          adminSenha = null;
+          erro.classList.remove('hidden');
+          return;
+        }
+      } catch (e) {
+        adminSenha = null;
+        console.error('Erro no login dos noivos', e);
+        showAdminToast('Sem conexão com a planilha. Tente de novo.');
+        return;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    document.getElementById('admin-pass-input').value = '';
+    closeAdminAuthModal();
+    openAdminPanel();
+  }
+
+  function openAdminPanel() {
+    buildAdminList();
+    const panel = document.getElementById('admin-panel-modal');
+    panel.classList.remove('hidden');
+    panel.classList.add('flex');
+  }
+
+  function closeAdminPanel() {
+    const panel = document.getElementById('admin-panel-modal');
+    panel.classList.add('hidden');
+    panel.classList.remove('flex');
+    if (PLANILHA_URL) {
+      adminSenha = null;
+      carregarReservas();
+    }
+  }
+
+  function buildAdminList() {
+    const container = document.getElementById('admin-reserved-list');
+    container.innerHTML = '';
+
+    const reserved = catalog.filter(i => i.status === 'reserved');
+    const totalVal = reserved.reduce((acc, curr) => acc + curr.price, 0);
+
+    document.getElementById('admin-total-reserved-value').innerText = `R$ ${totalVal.toFixed(2).replace('.', ',')}`;
+    document.getElementById('admin-total-reserved-count').innerText = `${reserved.length} ${reserved.length === 1 ? "mimo escolhido" : "mimos escolhidos"}`;
+
+    if (reserved.length === 0) {
+      container.innerHTML = `
+        <div class="p-6 text-center rounded-2xl bg-surface-container-low text-on-surface-variant font-body-sm">
+          Ainda não há presentes marcados na lista.
+        </div>
+      `;
+      return;
+    }
+
+    reserved.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'p-space-sm rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-xs flex flex-col gap-2';
+      card.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div class="min-w-0">
+            <h4 class="font-body-sm font-semibold text-on-surface truncate">${item.title}</h4>
+            <span class="font-label-md text-primary font-bold">${item.priceFormatted}</span>
+          </div>
+          <button onclick="reopenGift(${item.id})" class="px-2.5 py-1 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-[11px] shrink-0 transition-all border border-outline-variant/30">
+            Reabrir
+          </button>
+        </div>
+        <div class="p-2 rounded-xl bg-surface-container-low flex flex-col gap-0.5 border border-outline-variant/20">
+          <div class="flex items-center gap-1 text-on-surface">
+            <span class="material-symbols-outlined text-[14px] text-tertiary">person</span>
+            <span class="font-label-md text-[12px] font-semibold">${escapeHtml(item.reservedBy || 'Convidado Anônimo')}</span>
+          </div>
+          ${
+            item.message
+              ? `<p class="font-body-sm text-[12px] text-on-surface-variant italic pl-4 font-serif">"${escapeHtml(item.message)}"</p>`
+              : ''
+          }
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  async function reopenGift(id) {
+    if (PLANILHA_URL) {
+      try {
+        const resp = await chamarPlanilha({ acao: 'reabrir', id, senha: adminSenha });
+        if (!resp.ok) {
+          showAdminToast('Não foi possível liberar o presente.');
+          return;
+        }
+        await carregarReservasAdmin();
+      } catch (e) {
+        console.error('Erro ao reabrir presente', e);
+        showAdminToast('Sem conexão com a planilha. Tente de novo.');
+        return;
+      }
+    } else {
+      const item = catalog.find(i => i.id === id);
+      if (item) {
+        item.status = 'available';
+        item.reservedBy = null;
+        item.message = null;
+      }
+      renderCatalog();
+    }
+    buildAdminList();
+    showAdminToast('Presente liberado de volta para a lista!');
+  }
+
+  function copiarLinkLista() {
+    const url = location.href.split('#')[0];
+    navigator.clipboard.writeText(url)
+      .then(() => showAdminToast('Link da lista copiado!'))
+      .catch(() => showAdminToast(url));
+  }
+
+  function exportCSV() {
+    const reserved = catalog.filter(i => i.status === 'reserved');
+    let csvContent = 'data:text/csv;charset=utf-8,ID,Item,Preco,Convidado,Mensagem\n';
+    reserved.forEach(r => {
+      const safeMsg = (r.message || '').replace(/"/g, '""');
+      csvContent += `${r.id},"${r.title}","${r.priceFormatted}","${r.reservedBy || ''}","${safeMsg}"\n`;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', 'lista_presentes_cha_dos_noivos.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showAdminToast('Planilha CSV gerada com sucesso!');
+  }
+
+  function showAdminToast(msg) {
+    const toast = document.getElementById('app-toast');
+    document.getElementById('toast-message').innerText = msg;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 2800);
+  }
+
+  // Initialize view
+  renderCatalog();
+  carregarReservas();
+  // atualiza quando o convidado volta para a aba (ex.: depois de ver o item na loja)
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') carregarReservas();
+  });
+</script></main><nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface/95 backdrop-blur-xl border-t border-outline-variant/60"><div class="max-w-[540px] mx-auto flex items-center justify-around h-16 px-gutter-mobile"><a class="flex flex-col items-center justify-center w-16 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="index.html"><span class="material-symbols-outlined text-[22px]">mail</span><span class="font-label-md text-[12px] mt-0.5">Convite</span></a><a class="flex flex-col items-center justify-center w-16 h-14 text-primary font-semibold" href="#"><span class="material-symbols-outlined text-[22px]">card_giftcard</span><span class="font-label-md text-[12px] mt-0.5">Presentes</span></a><a class="flex flex-col items-center justify-center w-16 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="#" onclick="openAdminModal(); return false;"><span class="material-symbols-outlined text-[22px]">lock_open</span><span class="font-label-md text-[12px] mt-0.5">Noivos</span></a></div></nav></body></html>

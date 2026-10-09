@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Chá dos Noivos · Ágatha &amp; Matheus</title>
+<meta name="description" content="Chá dos Noivos de Ágatha e Matheus — sábado, 07/11, às 16h00, Rua das Canárias, 50, Santa Branca, BH/MG."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  /*
+   * Layout reproduzido do "CHÁ22 (1).pdf" (arte de 1080 x 4737 px).
+   * Todas as medidas usam a unidade --u = 1px da arte original, escalada
+   * pela largura do convite, então a página fica idêntica em qualquer tela.
+   */
+  :root {
+    --creme: #e9e4e0;
+    --azul: #3b5c9f;
+    --laranja: #fe7501;
+    --tinta: #3a323f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--creme); }
+  body {
+    font-family: "Crimson Pro", "EB Garamond", Georgia, serif;
+    color: var(--tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+  .convite {
+    width: min(100%, 540px);
+    margin: 0 auto;
+    container-type: inline-size;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .08);
+  }
+  .folha {
+    --u: calc(100cqw / 1080);
+    position: relative;
+    height: calc(4737 * var(--u));
+    background: var(--creme);
+    overflow: hidden;
+  }
+  .folha > * { position: absolute; margin: 0; }
+  .folha img { display: block; }
+
+  /* posição: left/top/largura em px da arte original */
+  .at { left: calc(var(--x) * var(--u)); top: calc(var(--y) * var(--u)); width: calc(var(--w) * var(--u)); }
+
+  .cartao {
+    background: var(--azul);
+    border-radius: calc(45 * var(--u));
+    box-shadow: 0 calc(14 * var(--u)) calc(40 * var(--u)) rgba(40, 40, 60, .22);
+    height: calc(536 * var(--u));
+  }
+  .texto-cartao {
+    color: #fff;
+    font-size: calc(45 * var(--u));
+    line-height: calc(50 * var(--u));
+    text-align: center;
+  }
+  .texto-cartao { white-space: nowrap; }
+  /* cada <span> é uma linha justificada, como no PDF; a última linha fica centralizada */
+  .texto-cartao.justificado span { display: block; white-space: nowrap; font-size: calc(42 * var(--u)); text-align: justify; text-align-last: justify; }
+  .texto-cartao u { text-decoration-thickness: calc(2 * var(--u)); text-underline-offset: calc(8 * var(--u)); }
+
+  .botao {
+    display: block;
+    height: calc(140 * var(--u));
+    border-radius: calc(70 * var(--u));
+    background: var(--laranja);
+    box-shadow: 0 calc(10 * var(--u)) calc(28 * var(--u)) rgba(40, 40, 60, .25);
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .botao:hover { filter: brightness(1.05); }
+  .botao:active { transform: scale(.97); }
+  .botao img { position: absolute; }
+
+  .programa {
+    font-size: calc(62 * var(--u));
+    line-height: calc(58 * var(--u));
+    white-space: nowrap;
+  }
+  .autor {
+    left: 0; right: 0;
+    text-align: center;
+    font-size: calc(45 * var(--u));
+    line-height: 1;
+  }
+</style>
+</head>
+<body>
+<main class="convite">
+  <div class="folha">
+
+    <!-- Capa: azulejos, "Ágatha & Matheus", "Chá dos Noivos" e quadro com data e endereço -->
+    <img class="at" style="--x:0;--y:0;--w:1080" src="assets/hero.jpg"
+         alt="Ágatha &amp; Matheus — Chá dos Noivos. Sábado, 07/11, às 16h00. Rua das Canárias, 50, Santa Branca, BH/MG."/>
+
+    <!-- Lista de Presentes -->
+    <img class="at" style="--x:0;--y:1956;--w:1080" src="assets/fundo-presentes.jpg" alt=""/>
+    <div class="at cartao" style="--x:45;--y:2046;--w:990"></div>
+    <img class="at" style="--x:100;--y:2056;--w:890" src="assets/titulo-presentes.png" alt="Lista de Presentes"/>
+    <p class="at texto-cartao" style="--x:110;--y:2232;--w:860">
+      Montamos uma lista de presentes com tudo o<br/>
+      que precisamos para a nossa casinha nova.<br/><br/>
+      Para nos ajudar a montar esse cantinho, acesse<br/>
+      o site abaixo!
+    </p>
+    <a class="at botao" style="--x:250;--y:2513;--w:580" href="lista.html">
+      <img style="left:calc(55 * var(--u));top:calc(30 * var(--u));width:calc(473 * var(--u))"
+           src="assets/botao-lista.png" alt="Acesse nossa lista aqui"/>
+    </a>
+
+    <!-- Nossa Programação -->
+    <img class="at" style="--x:110;--y:2800;--w:860" src="assets/titulo-programacao.png" alt="Nossa Programação"/>
+
+    <img class="at" style="--x:120;--y:2962;--w:223" src="assets/emoji-comer.png" alt=""/>
+    <p class="at programa" style="--x:360;--y:3008">Comer maneiro!</p>
+
+    <p class="at programa" style="--y:3141;right:calc(359 * var(--u));text-align:right">
+      Brincadeiras malucas<br/>que a noiva viu no ttk
+    </p>
+    <img class="at" style="--x:748;--y:3132;--w:212" src="assets/emoji-risada.png" alt=""/>
+
+    <img class="at" style="--x:122;--y:3302;--w:170" src="assets/emoji-bingo.png" alt=""/>
+    <p class="at programa" style="--x:297;--y:3311">
+      O que sempre tem e<br/>nunca pode faltar: BINGO
+    </p>
+
+    <!-- Lista de Confirmação -->
+    <img class="at" style="--x:0;--y:3500;--w:1080" src="assets/fundo-confirmacao.jpg" alt=""/>
+    <div class="at cartao" style="--x:45;--y:3600;--w:990;height:calc(535 * var(--u))"></div>
+    <img class="at" style="--x:66;--y:3612;--w:952" src="assets/titulo-confirmacao.png" alt="Lista de Confirmação"/>
+    <p class="at texto-cartao justificado" style="--x:131;--y:3786;--w:819">
+      <span>Estamos preparando tudo com muito carinho</span>
+      <span>para o nosso Chá! Para nos ajudar na</span>
+      <span>organização, por favor, confirme sua presença</span>
+      <span>acessando o <u>site abaixo</u> até o dia 4 de novembro.</span>
+      Esperamos você!
+    </p>
+    <a class="at botao" id="botao-confirmar" style="--x:250;--y:4067;--w:580;height:calc(139 * var(--u))" href="#">
+      <img style="left:calc(62 * var(--u));top:calc(26 * var(--u));width:calc(468 * var(--u))"
+           src="assets/botao-confirmar.png" alt="Confirme sua presença"/>
+    </a>
+
+    <!-- Citação -->
+    <img class="at" style="--x:120;--y:4440;--w:840" src="assets/citacao.png"
+         alt="“Que pode uma criatura senão, entre criaturas, amar?”"/>
+    <p class="autor" style="top:calc(4622 * var(--u))">Carlos Drummond de Andrade</p>
+
+  </div>
+</main>
+
+<script>
+  // Link do botão "Confirme sua presença" (ex.: Google Forms ou WhatsApp).
+  const LINK_CONFIRMACAO = '';
+
+  const botaoConfirmar = document.getElementById('botao-confirmar');
+  if (LINK_CONFIRMACAO) {
+    botaoConfirmar.href = LINK_CONFIRMACAO;
+    botaoConfirmar.target = '_blank';
+    botaoConfirmar.rel = 'noopener';
+  }
+</script>
+</body>
+</html>
