@@ -1,3 +1,5 @@
+/** @OnlyCurrentDoc  (limita a permissão pedida a esta planilha apenas) */
+
 /**
  * Back-end da lista de presentes (lista.html) usando uma Planilha Google.
  *
